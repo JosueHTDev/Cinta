@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: dark;
+}
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1a1210;
+  --panel: #221715;
+  --panel2: #2a1b18;
+  --line: #3c2621;
+  --red: #c1382b;
+  --red-bright: #e8492e;
+  --gold: #d9a24b;
+  --text: #f3e8dc;
+  --muted: #b49c8c;
+  --faint: #6e5750;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4ece0;
+  --panel: #fffbf5;
+  --panel2: #fbf1e3;
+  --line: #e3d1ba;
+  --red: #b3301f;
+  --red-bright: #d43e26;
+  --gold: #a3721f;
+  --text: #241713;
+  --muted: #7c6252;
+  --faint: #a4907c;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--red) 8%, transparent), transparent 45%);
+  transition: background-color 0.25s ease;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--panel);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+/* Borde perforado, como el canto de una cinta magnética */
+.sprocket-edge {
+  background-image: radial-gradient(circle, var(--line) 1.5px, transparent 1.6px);
+  background-size: 14px 14px;
+  background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--red-bright);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
