@@ -131,7 +131,7 @@ export default function Home() {
       <header className="mb-10 flex items-start justify-between gap-4">
         <div className="flex flex-col gap-2">
           <p className="font-label text-[11px] font-semibold uppercase tracking-[0.24em] text-red">
-            Google Cloud Speech-to-Text
+            De Audio a Texto 
           </p>
           <h1 className="font-display text-4xl font-bold italic tracking-tight text-text md:text-5xl">
             Cinta
